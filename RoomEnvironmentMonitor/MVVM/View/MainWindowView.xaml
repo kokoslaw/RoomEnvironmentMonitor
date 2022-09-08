@@ -1,0 +1,64 @@
+﻿<Window x:Class="RoomEnvironmentMonitor.MVVM.View.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoomEnvironmentMonitor.MVVM.View"
+        xmlns:bh="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:vm="clr-namespace:RoomEnvironmentMonitor.MVVM.ViewModel"
+        xmlns:behaviors="clr-namespace:RoomEnvironmentMonitor.Behaviors"
+        mc:Ignorable="d"
+        ShowInTaskbar="False"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        BorderBrush="#1f1f1f"
+        BorderThickness="2"
+        Topmost="True"
+        Height="34" Width="250">
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <bh:Interaction.Behaviors>
+        <behaviors:MainWindowBehaviors/>
+    </bh:Interaction.Behaviors>
+
+    <Grid Background="#292929">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="60"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Column="0"
+               Source="/Images/tempImage.png"
+               Style="{StaticResource IconImageStyle}"/>
+
+        <TextBlock Text="{Binding Temperature}"
+                   Grid.Column="1"
+                   Style="{StaticResource ValueTextBlockStyle}"/>
+
+        <Image Grid.Column="2"
+               Source="/Images/humiImage.png"
+               Style="{StaticResource IconImageStyle}"/>
+
+        <TextBlock Text="{Binding Humidity}"
+                   Grid.Column="3"
+                   Style="{StaticResource ValueTextBlockStyle}"/>
+
+        <Image Grid.Column="4"
+               Source="/Images/sunImage.png"
+               Style="{StaticResource IconImageStyle}"/>
+
+        <TextBlock Text="{Binding Light}"
+                   Grid.Column="5"
+                   Style="{StaticResource ValueTextBlockStyle}"/>
+    </Grid>
+</Window>
