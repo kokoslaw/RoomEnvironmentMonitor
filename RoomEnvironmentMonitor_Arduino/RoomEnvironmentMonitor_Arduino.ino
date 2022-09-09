@@ -1,4 +1,3 @@
-
 #include "DHT.h"
 #include "SD.h"
 #define DHT11_PIN 2
@@ -10,6 +9,7 @@ void setup()
 {
   dht.setup(DHT11_PIN);
   Serial.begin(9600);
+  Serial.setTimeout(10);
   pinMode(AnalogPIN, INPUT);
 }
 

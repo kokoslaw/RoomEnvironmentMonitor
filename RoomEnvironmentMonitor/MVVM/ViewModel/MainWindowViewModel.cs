@@ -2,7 +2,6 @@
 using RoomEnvironmentMonitor.MVVM.Model;
 using System;
 using System.Windows;
-//using System.Diagnostics;
 using System.Timers;
 
 namespace RoomEnvironmentMonitor.MVVM.ViewModel
